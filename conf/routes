@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.ShotgunController.leaderboard
+GET     /user/:userId               controllers.ShotgunController.getUser(userId: Long)
+
+GET     /cars                       controllers.ShotgunController.getCars
+GET     /cars/:carId                controllers.ShotgunController.getCar(carId: Long)
+POST    /cars                       controllers.ShotgunController.addCar
+
+POST    /shotgun                    controllers.ShotgunController.shotgun
+POST    /shotgun/:shotgunId         controllers.ShotgunController.getShotgun(shotgunId: Long)
+GET     /reasons                    controllers.ShotgunController.reasons
+POST    /dispute                    controllers.ShotgunController.dispute
+GET     /dispute/:disputeId         controllers.ShotgunController.getDispute(disputeId: Long)
+PUT     /dispute/:disputeId         controllers.ShotgunController.gameDispute(disputeId: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
